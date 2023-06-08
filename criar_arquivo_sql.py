@@ -3,7 +3,7 @@ import pandas as pd
 import zipfile
 
 # Descompactando arquivo 'dados.zip'
-with zipfile.ZipFile('C:\\Users\\Asus\\PycharmProjects\\zipdados.zip', 'r') as zip_dados:
+with zipfile.ZipFile('dados.zip', 'r') as zip_dados:
     zip_dados.extractall('C:\\Users\\Asus\\PycharmProjects')
 
 # Criando dataframes com os arquivos cvs descompactados
@@ -42,3 +42,4 @@ with open('insert-dados.sql', 'w') as insert:
                       "VALUES ({}, {}, {}, {}, {}, {});\n".format(*values)
         # Escrevendo no arquivo 'insert-dados.sql'
         insert.write(insert_stmt)
+print('Arquivo insert-dados.sql, gerado com sucesso!')
